@@ -1,5 +1,7 @@
 import React from 'react';
 import FriendListItem from './friendListItem/friendListItem';
+import PropTypes from 'prop-types';
+import css from './FriendList.module.css';
 
 const FriendsList = ({ friends }) => {
   const friendListItem = friends.map(friends => (
@@ -10,7 +12,11 @@ const FriendsList = ({ friends }) => {
       key={friends.id}
     />
   ));
-  return <ul class="friend-list">{friendListItem}</ul>;
+  return <ul className={css.friendList}>{friendListItem}</ul>;
+};
+
+FriendsList.propTypes = {
+  friends: PropTypes.arrayOf(PropTypes.shape).isRequired,
 };
 
 export default FriendsList;

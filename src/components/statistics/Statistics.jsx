@@ -1,14 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import css from './Statistics.module.css';
+
+function getRandomBgColor() {
+  let letters = '0123456789ABCDEF'.split('');
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
+}
 
 const Statistics = ({ statisticsData, statisticsTitle }) => {
   return (
-    <section class="statistics">
-      {statisticsTitle && <h2 class="title">{statisticsTitle}</h2>}
+    <section className={css.statistics}>
+      {statisticsTitle && <h2>{statisticsTitle}</h2>}
 
-      <ul class="stat-list">
+      <ul className={css.statList}>
         {statisticsData.map(statistics => (
-          <li key={statistics.id}>
+          <li
+            className={css.statListItem}
+            key={statistics.id}
+            style={{ backgroundColor: getRandomBgColor() }}
+          >
             <span>{statistics.label}</span>
             <span>{statistics.percentage}%</span>
           </li>
