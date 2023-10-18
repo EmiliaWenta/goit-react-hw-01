@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import css from './Statistics.module.css';
+import css from './statistics.module.css';
 
 function getRandomBgColor() {
   let letters = '0123456789ABCDEF'.split('');
