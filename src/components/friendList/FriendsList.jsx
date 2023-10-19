@@ -10,6 +10,7 @@ const FriendsList = ({ friends }) => {
       name={friends.name}
       isOnline={friends.isOnline}
       id={friends.id}
+      key={friends.id}
     />
   ));
   return <ul className={css.friendList}>{friendListItem}</ul>;
